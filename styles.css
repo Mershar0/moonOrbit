@@ -1,0 +1,108 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000000 100%);
+    margin: 0;
+    overflow: hidden;
+    flex-direction: column;
+  }
+  
+  .title {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-family: 'Orbitron', sans-serif;
+    color: #DB7093;
+    text-shadow: 
+      0 0 8px rgba(219, 112, 147, 0.7), 
+      0 0 15px rgba(255, 255, 255, 0.2);
+    animation: float 6s ease-in-out infinite, pulse 3s ease-in-out infinite;
+    text-align: center;
+  }
+  
+  .space {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    height: 60vw;
+    max-width: 300px;
+    max-height: 300px;
+    position: relative;
+  }
+  
+  .earth {
+    position: absolute;
+    width: 33%;
+    height: 33%;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at 30% 30% , #4caf50 30%, #2196f3 70%);
+    box-shadow: 0 0 25px rgba(231, 236, 233, 0.5);
+    animation: spin 20s linear infinite;
+    z-index: 2;
+  }
+  
+  .orbit {
+    position: absolute;
+    width: 66%;
+    height: 66%;
+    transform: translate(-50%, -50%);
+    animation: orbit 6s linear infinite;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+  }
+  
+  .moon {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(circle at 30% 30%, #ffffff, #aaaaaa);
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3);
+  }
+  
+  .star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 2s infinite ease-in-out;
+    z-index: 0;
+  }
+  
+  @keyframes orbit {
+    0% {
+      transform: rotate(0deg) translate(-50%, -50%);
+    }
+    100% {
+      transform: rotate(360deg) translate(-50%, -50%);
+    }
+  }
+  
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 1; }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translate(-50%, 0);
+    }
+    50% {
+      transform: translate(-50%, -10px);
+    }
+  }
+  
